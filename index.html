@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wagle Enterprises | Fly Ash Brick Manufacturing Unit</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      background:#ffffff;
+      color:#222;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+      width:100%;
+      padding:18px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:1000;
+      background:rgba(255,255,255,0.95);
+      backdrop-filter:blur(10px);
+      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:#111;
+      letter-spacing:1px;
+    }
+
+    .logo span{
+      color:#6E9B57;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:30px;
+    }
+
+    .nav-links a{
+      color:#333;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#6E9B57;
+    }
+
+    .menu-btn{
+      display:none;
+      font-size:24px;
+      cursor:pointer;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:120px 8% 80px;
+      gap:60px;
+      background:linear-gradient(to right,#ffffff,#f7f9f6);
+    }
+
+    .hero-text{
+      flex:1;
+    }
+
+    .hero-text h1{
+      font-size:60px;
+      line-height:1.1;
+      margin-bottom:20px;
+      color:#111;
+    }
+
+    .hero-text h1 span{
+      color:#6E9B57;
+    }
+
+    .hero-text p{
+      font-size:18px;
+      color:#555;
+      line-height:1.8;
+      margin-bottom:35px;
+      max-width:600px;
+    }
+
+    .hero-btns{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:14px 28px;
+      border-radius:8px;
+      font-weight:600;
+      transition:0.3s;
+      display:inline-block;
+    }
+
+    .btn-primary{
+      background:#6E9B57;
+      color:white;
+    }
+
+    .btn-primary:hover{
+      background:#5d8748;
+    }
+
+    .btn-outline{
+      border:2px solid #6E9B57;
+      color:#6E9B57;
+    }
+
+    .btn-outline:hover{
+      background:#6E9B57;
+      color:white;
+    }
+
+    .hero-image{
+      flex:1;
+      display:flex;
+      justify-content:center;
+    }
+
+    .hero-image img{
+      width:100%;
+      max-width:500px;
+      border-radius:20px;
+      box-shadow:0 20px 50px rgba(0,0,0,0.12);
+    }
+
+    /* SECTION */
+
+    section{
+      padding:90px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:40px;
+      color:#111;
+      margin-bottom:15px;
+    }
+
+    .section-title p{
+      color:#666;
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+    }
+
+    /* FEATURES */
+
+    .features{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .feature-card{
+      background:#fff;
+      border-radius:18px;
+      padding:40px 30px;
+      text-align:center;
+      transition:0.4s;
+      border:1px solid #eee;
+      box-shadow:0 10px 30px rgba(0,0,0,0.04);
+    }
+
+    .feature-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .feature-card i{
+      font-size:42px;
+      color:#6E9B57;
+      margin-bottom:20px;
+    }
+
+    .feature-card h3{
+      margin-bottom:15px;
+      font-size:22px;
+    }
+
+    .feature-card p{
+      color:#666;
+      line-height:1.7;
+    }
+
+    /* ABOUT */
+
+    .about{
+      display:flex;
+      align-items:center;
+      gap:60px;
+      flex-wrap:wrap;
+    }
+
+    .about-image{
+      flex:1;
+    }
+
+    .about-image img{
+      width:100%;
+      border-radius:20px;
+    }
+
+    .about-text{
+      flex:1;
+    }
+
+    .about-text h2{
+      font-size:42px;
+      margin-bottom:20px;
+    }
+
+    .about-text p{
+      line-height:1.9;
+      color:#555;
+      margin-bottom:20px;
+    }
+
+    .about-list{
+      margin-top:25px;
+    }
+
+    .about-list div{
+      display:flex;
+      align-items:center;
+      gap:15px;
+      margin-bottom:15px;
+      color:#333;
+      font-weight:500;
+    }
+
+    .about-list i{
+      color:#6E9B57;
+    }
+
+    /* CONTACT */
+
+    .contact-wrapper{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:40px;
+    }
+
+    .contact-box{
+      background:#fff;
+      padding:40px;
+      border-radius:18px;
+      border:1px solid #eee;
+      box-shadow:0 10px 30px rgba(0,0,0,0.04);
+    }
+
+    .contact-box h3{
+      margin-bottom:25px;
+      font-size:28px;
+    }
+
+    .contact-info{
+      display:flex;
+      gap:18px;
+      margin-bottom:25px;
+      align-items:flex-start;
+    }
+
+    .contact-info i{
+      color:#6E9B57;
+      font-size:22px;
+      margin-top:4px;
+    }
+
+    .contact-info p{
+      color:#555;
+      line-height:1.8;
+    }
+
+    iframe{
+      width:100%;
+      height:320px;
+      border:none;
+      border-radius:18px;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#111;
+      color:#ddd;
+      padding:35px 8%;
+      text-align:center;
+    }
+
+    footer p{
+      line-height:1.8;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:950px){
+
+      .hero{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .hero-text h1{
+        font-size:46px;
+      }
+
+      .hero-btns{
+        justify-content:center;
+      }
+
+      .about{
+        flex-direction:column;
+      }
+
+      .nav-links{
+        position:absolute;
+        top:80px;
+        right:-100%;
+        width:250px;
+        height:300px;
+        background:white;
+        flex-direction:column;
+        padding:40px;
+        transition:0.4s;
+        box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      }
+
+      .nav-links.active{
+        right:20px;
+      }
+
+      .menu-btn{
+        display:block;
+      }
+    }
+
+    @media(max-width:600px){
+
+      .hero-text h1{
+        font-size:38px;
+      }
+
+      .section-title h2{
+        font-size:32px;
+      }
+
+      .about-text h2{
+        font-size:34px;
+      }
+
+      .navbar{
+        padding:18px 5%;
+      }
+
+      section{
+        padding:80px 5%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav class="navbar">
+    <div class="logo">WAGLE <span>ENTERPRISES</span></div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="menu-btn" id="menuBtn">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-text">
+      <h1>Building Stronger Futures With <span>Eco-Friendly Bricks</span></h1>
+
+      <p>
+        Wagle Enterprises is a modern Fly Ash Brick Manufacturing Unit dedicated to producing durable, sustainable and high-quality construction materials for a greener tomorrow.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-primary">Contact Us</a>
+        <a href="#about" class="btn btn-outline">Learn More</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+<img src="https://images.unsplash.com/photo-1599707254554-027aeb4deacd?q=80&w=1200&auto=format&fit=crop" alt="Fly Ash Bricks">
+    </div>
+
+  </section>
+
+  <!-- FEATURES -->
+
+  <section id="features">
+
+    <div class="section-title">
+      <h2>Why Choose Us</h2>
+      <p>
+        We combine sustainability, strength and smart manufacturing techniques to deliver reliable construction solutions.
+      </p>
+    </div>
+
+    <div class="features">
+
+      <div class="feature-card">
+        <i class="fa-solid fa-leaf"></i>
+        <h3>Eco-Friendly</h3>
+        <p>
+          Our fly ash bricks are environmentally responsible and help reduce construction pollution.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <i class="fa-solid fa-cubes"></i>
+        <h3>Strong & Durable</h3>
+        <p>
+          Manufactured with premium quality standards for long-lasting and dependable performance.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <i class="fa-solid fa-gears"></i>
+        <h3>Modern Solutions</h3>
+        <p>
+          Smart production methods ensuring precision, consistency and better construction support.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="about">
+
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop" alt="Factory">
+      </div>
+
+      <div class="about-text">
+
+        <h2>About Wagle Enterprises</h2>
+
+        <p>
+          Wagle Enterprises is committed to delivering high-quality fly ash bricks that meet modern construction demands. Our focus is on durability, sustainability and customer satisfaction.
+        </p>
+
+        <p>
+          With advanced manufacturing processes and eco-conscious production techniques, we aim to contribute towards stronger infrastructure and a greener future.
+        </p>
+
+        <div class="about-list">
+
+          <div>
+            <i class="fa-solid fa-check"></i>
+            High-quality manufacturing standards
+          </div>
+
+          <div>
+            <i class="fa-solid fa-check"></i>
+            Sustainable and eco-friendly production
+          </div>
+
+          <div>
+            <i class="fa-solid fa-check"></i>
+            Trusted by builders and contractors
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="section-title">
+      <h2>Get In Touch</h2>
+      <p>
+        Reach out to us for inquiries, orders or business collaborations.
+      </p>
+    </div>
+
+    <div class="contact-wrapper">
+
+      <div class="contact-box">
+
+        <h3>Contact Information</h3>
+
+        <div class="contact-info">
+          <i class="fa-solid fa-location-dot"></i>
+
+          <p>
+            28, E Block<br>
+            Ratnagiri Mirzole,<br>
+            M.I.D.C Zone 11
+          </p>
+        </div>
+
+        <div class="contact-info">
+          <i class="fa-solid fa-phone"></i>
+
+          <p>
+            +91 8668506960
+          </p>
+        </div>
+
+        <div class="contact-info">
+          <i class="fa-solid fa-industry"></i>
+
+          <p>
+            Fly Ash Brick Manufacturing Unit
+          </p>
+        </div>
+
+      </div>
+
+      <div>
+        <iframe 
+          src="https://www.google.com/maps?q=Ratnagiri%20Mirzole%20MIDC%20Zone%2011&output=embed">
+        </iframe>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <p>
+      © 2026 Wagle Enterprises. All Rights Reserved.<br>
+      Building Today • Sustaining Tomorrow
+    </p>
+  </footer>
+
+  <!-- JS -->
+
+  <script>
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+  </script>
+
+</body>
+</html>
